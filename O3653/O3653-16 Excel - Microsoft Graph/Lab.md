@@ -101,7 +101,7 @@ In this exercise, you will create the ASP.NET MVC5 application and register it w
 24. Now that you are signed into your application, exercise 1 is complete!
 
 ## Exercise 2: Access the Excel file in OneDrive for Business through Microsoft Graph SDK
-1. This exercise is based on the project located in the  [\\O3653\O3653-16 Excel - Microsoft Graph\Starter Project](Starter Project) folder. Open the project with Visual Studio 2017. 
+1. This exercise is based on the project located in the  **\\O3653\O3653-16 Excel - Microsoft Graph\Starter Project** folder. Open the project with Visual Studio 2017. 
 
    Notice: update web.config and add values for below items.  These values can be found on Exercise 1's web.config.
 

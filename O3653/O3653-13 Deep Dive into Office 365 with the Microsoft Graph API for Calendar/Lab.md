@@ -120,7 +120,7 @@ Congratulations... at this point your app is configured with Azure AD and levera
 
 In this exercise you will take the ASP.NET MVC web application you created in the previous exercise and configure it to use Azure AD & OpenID Connect for user & app authentication. You will do this by utilizing the OWIN framework. Once authenticated, you can use the access token returned by Azure AD to access the Microsoft Graph.
 
-1. This exercise is based on the project located in the  [\\O3653\O3653-13 Deep Dive into Office 365 with the Microsoft Graph API for Calendar\Starter Project](Starter Project) folder. Open the project with Visual Studio 2017. 
+1. This exercise is based on the project located in the  **\\O3653\O3653-13 Deep Dive into Office 365 with the Microsoft Graph API for Calendar\Starter Project** folder. Open the project with Visual Studio 2017. 
 
    Notice: update web.config and add values for below items.  These values can be found on Exercise 1's web.config.
 

@@ -14,19 +14,16 @@ In this first step, you will create a new ASP.NET MVC project using the **Graph 
 In this exercise, you will create the ASP.NET MVC5 application and register it with Azure active Directory.
 
 1. Launch **Visual Studio 2017** as an administrator. 
-
 2. In Visual Studio select **File/New/Project**.
-
 3. In the **New Project** dialog, select **Templates/Visual C#/Web** and click **ASP.NET Web Application**. Name the new project **OneNoteDev** and then click **OK**.  
 
-   ![01](Images/01.png)
-
-
+    ![Screenshot of the previous step](Images/01.png)
+    > NOTE: Make sure you enter the exact same name for the Visual Studio Project that is specified in these lab instructions.  The Visual Studio Project name becomes part of the namespace in the code.  The code inside these instructions depends on the namespace matching the Visual Studio Project name specified in these instructions.  If you use a different project name the code will not compile unless you adjust all the namespaces to match the Visual Studio Project name you enter when you create the project.
 
 4. In the **New ASP.NET Project** dialog, click **MVC** and then click **Change Authentication**.
 5. Select **Work And School Accounts**, check **Read directory data** and click **OK**.
 
- ![02](Images/02.png)
+ ![Screenshot of the previous step](Images/02.png)
 
 6. At this point you can test the authentication flow for your application.
 
@@ -121,7 +118,7 @@ In this step you will create a repository class that will handle all communicati
 
 3. Create a new folder in the project's **Models** folder named **JsonHelpers**.
 
-4. Copy all the C# files provided with this lab, located in the [\\\O3653\O3653-7 Deep Dive into the Office 365 APIs for OneNote services\Labs\Labfiles](Labs/Labfiles/JsonHelpers) folder, into this new **JsonHelpers** folder you just added in your project.
+4. Copy all the C# files provided with this lab, located in the **O3653\O3653-7 Deep Dive into the Office 365 APIs for OneNote services\Labs\Labfiles** folder, into this new **JsonHelpers** folder you just added in your project.
 
   > **Note:** These files were created using the handy utility in Visual Studio: [Paste JSON as Classes](http://blogs.msdn.com/b/webdev/archive/2012/12/18/paste-json-as-classes-in-asp-net-and-web-tools-2012-2-rc.aspx).
 
