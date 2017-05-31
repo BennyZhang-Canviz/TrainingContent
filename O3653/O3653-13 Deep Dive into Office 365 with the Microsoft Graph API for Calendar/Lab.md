@@ -14,79 +14,80 @@ In this lab, you will use the Microsoft Graph SDK to work with Office 365 calend
 ## Exercise 1: Create an ASP.NET MVC5 Application
 In this exercise, you will create the ASP.NET MVC5 application and register it with Azure active Directory.
 1. Launch **Visual Studio 2017** as administrator.
+
 2. In Visual Studio, click **File/New/Project**.
-3. In the **New Project** dialog
 
-  Select **Templates/Visual C#/Web**.
+3. In the **New Project** dialog.
 
-  Select **ASP.NET Web Application**.
+4. Select **Templates/Visual C#/Web**.
+
+5. Select **ASP.NET Web Application**.
 
   ![Screenshot of the previous step](Images/01.png)
 
   Give the project the name **QuickStartCalendarWebApp** and Click **OK**.
-4. In the **New ASP.NET Project** dialog
 
-  Click **MVC**.
+6. In the **New ASP.NET Project** dialog
 
-  Click **Change Authentication**.
+7. Click **MVC**.
 
-  Select **Work And School Accounts**.
+8. Click **Change Authentication**.
 
-  Select **Cloud - Single Organization**
+9. Select **Work And School Accounts**.
 
-  Input **Domain** of your O365 tenancy
+10. Select **Cloud - Single Organization**
 
-  Check **Read directory data** under Directory Access Permissions
+11. Input **Domain** of your O365 tenancy
 
-  Click **OK**.
+12. Check **Read directory data** under Directory Access Permissions
 
-  Uncheck **Host in the cloud**
+13. Click **OK**.
 
-  Click **OK**.
+14. Uncheck **Host in the cloud**
 
-  ![Screenshot of the previous step](Images/03.png)
+15. Click **OK**.
 
-  ![Screenshot of the previous step](Images/02.png)
+   ![Screenshot of the previous step](Images/03.png)
 
-5. Ensure the web project uses SSL by default:
-  1. In the **Solution Explorer** tool window, select the project and look at the **Properties** tool window. 
-  2. Ensure **SSL Enabled** is set to **TRUE**.
-  3. Copy the **SSL URL** property to the clipboard for use in the next step.
+   ![Screenshot of the previous step](Images/02.png)
 
-    ![Screenshot of the previous step](Images/SslEnabled.png)
-    > It is important to do this now because in the next step when you create the application in Azure AD, you want the reply URL to use HTTPS. If you did not do this now, you would have to manually make the changes the Visual Studio wizard is going to do for you in creating the app.
+16. Ensure the web project uses SSL by default:
 
-6. Configure the project always goes to the homepage of the web application when debugging:
-  1. In the **Solution Explorer** tool window, right-click the project and select **Properties**.
-  2. Select the **Web** tab in the left margin.
-  3. Find the section **Start Action**.
-  4. Click the radio button **Start URL** and enter the SSL URL of the web project that you copied from the previous step.
+17. In the **Solution Explorer** tool window, select the project and look at the **Properties** tool window. 
 
-    ![Screenshot of the previous step](Images/StartUrl.png)
+18. Ensure **SSL Enabled** is set to **TRUE**.
 
-7. At this point you can test the authentication flow for your application.
-  1. In Visual Studio, press **F5**. The browser will automatically launch taking you to the HTTPS start page for the web application.
+19. Copy the **SSL URL** property to the clipboard for use in the next step.
+
+   ![Screenshot of the previous step](Images/SslEnabled.png)
+   > It is important to do this now because in the next step when you create the application in Azure AD, you want the reply URL to use HTTPS. If you did not do this now, you would have to manually make the changes the Visual Studio wizard is going to do for you in creating the app.
+
+20. At this point you can test the authentication flow for your application.
+
+21. In Visual Studio, press **F5**. The browser will automatically launch taking you to the HTTPS start page for the web application.
+
+22. To sign in, click the **Sign In** link in the upper-right corner.
+
+23. Login using your **Organizational Account**.
+
+24. Upon a successful login, since this will be the first time you have logged into this app, Azure AD will present you with the common consent dialog that looks similar to the following image:
 
 
-1.   To sign in, click the **Sign In** link in the upper-right corner.
-  2. Login using your **Organizational Account**.
-  3. Upon a successful login, since this will be the first time you have logged into this app, Azure AD will present you with the common consent dialog that looks similar to the following image:
+![Screenshot of the previous step](Images/ConsentDialog.png)
 
-    ![Screenshot of the previous step](Images/ConsentDialog.png)
-
-  4. Click **Accept** to approve the app's permission request on your data in Office 365.
-  5. You will then be redirected back to your web application. However notice in the upper right corner, it now shows your email address & the **Sign Out** link.
+25. Click **Accept** to approve the app's permission request on your data in Office 365.
+26. You will then be redirected back to your web application. However notice in the upper right corner, it now shows your email address & the **Sign Out** link.
 
 Congratulations... at this point your app is configured with Azure AD and leverages OpenID Connect and OWIN to facilitate the authentication process!
 
-8. Open the **Web.config** file and find the **appSettings** element. This is where you will need to add your appId and app secret you will generate in the next step.
-9. Launch the Application Registration Portal by navigating your web browser and going to **apps.dev.microsoft.com**. to register a new application.
-10. Sign into the portal using your Office 365 username and password.
-11. Click **Add an App** and type **GraphCalendarQuickStart** for the application name.
-12. Copy the **Application Id** and paste it into the value for **ida:AppId** in your project **web.config** file.
-13. Under **Application Secrets** click **Generate New Password** to create a new client secret for your app.
-14. Copy the displayed app password and paste it into the value for **ida:AppSecret** in your project **web.config** file.
-15. Modify the **ida:AppScopes** value to include the required `https://graph.microsoft.com/calendars.readwrite` and `https://graph.microsoft.com/calendars.read` scopes.
+27. Open the **Web.config** file and find the **appSettings** element. This is where you will need to add your appId and app secret you will generate in the next step.
+28. Launch the Application Registration Portal by navigating your web browser and going to **apps.dev.microsoft.com**. to register a new application.
+29. Sign into the portal using your Office 365 username and password.
+30. Click **Add an App** and type **GraphCalendarQuickStart** for the application name.
+31. Copy the **Application Id** and paste it into the value for **ida:AppId** in your project **web.config** file.
+32. Under **Application Secrets** click **Generate New Password** to create a new client secret for your app.
+33. Copy the displayed app password and paste it into the value for **ida:AppSecret** in your project **web.config** file.
+34. Modify the **ida:AppScopes** value to include the required `https://graph.microsoft.com/calendars.readwrite` and `https://graph.microsoft.com/calendars.read` scopes.
 
 ```
 <configuration>
@@ -102,18 +103,18 @@ Congratulations... at this point your app is configured with Azure AD and levera
 </configuration>
 ```
 
-16. Add a redirect URL to enable testing on your localhost.
-17. Right-click **QuickStartCalendarWebApp** and click **Properties** to open the project properties.
-18. Click **Web** in the left navigation.
-19. Copy the **Project Url** value.
-20. Back on the Application Registration Portal page, click **Add Platform>Web**.
-21. Paste the value of **Project Url** into the **Redirect URIs** field.
-22. Scroll to the bottom of the page and click **Save**.
-23. Set Startup page to Signout page (to avoid stale token error)
-24. Right-click **QuickStartCalendarWebApp** and click **Properties** to open the project properties.
-25. Click **Web** in the left navigation.
-26. Under **Start Action** Choose **Specific Page** option and Type its value as **Account/SignOut**
-27. Press **F5** to compile and launch your new application in the default browser.
+35. Add a redirect URL to enable testing on your localhost.
+36. Right-click **QuickStartCalendarWebApp** and click **Properties** to open the project properties.
+37. Click **Web** in the left navigation.
+38. Copy the **Project Url** value.
+39. Back on the Application Registration Portal page, click **Add Platform>Web**.
+40. Paste the value of **Project Url** into the **Redirect URIs** field.
+41. Scroll to the bottom of the page and click **Save**.
+42. Set Startup page to Signout page (to avoid stale token error)
+43. Right-click **QuickStartCalendarWebApp** and click **Properties** to open the project properties.
+44. Click **Web** in the left navigation.
+45. Under **Start Action** Choose **Specific Page** option and Type its value as **Account/SignOut**
+46. Press **F5** to compile and launch your new application in the default browser.
 
 ## Exercise 2: Access Calendar through Microsoft Graph SDK
 
@@ -179,7 +180,7 @@ In this exercise you will take the ASP.NET MVC web application you created in th
 
    2. Type **Install-Package Bootstrap.Datepicker** and then press Enter key.
 
-      ![09](Images\09.png)
+      ![09](Images/09.png)
 
    3. Open the **App_Start/BundleConfig.cs** file and update the bootstrap script and CSS bundles. Replace these lines:
 
