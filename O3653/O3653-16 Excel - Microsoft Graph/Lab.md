@@ -954,7 +954,7 @@ namespace GraphExcel.Controllers
 
 Add a new file under `Models` folder called `ToDoItem.cs`
 
-![Screenshot of adding a new file in Visual Studio](images/model.JPG)
+![Screenshot of adding a new file in Visual Studio](Images/model.JPG)
 
 ##### `ToDoItem.cs` contents
 
@@ -1027,7 +1027,7 @@ namespace GraphExcel.Models
 
 Create new views for To-Do list and Chart pages. 
 
-![Screenshot of Visual Studio](images/views.JPG)
+![Screenshot of Visual Studio](Images/views.JPG)
 
 ##### Create `Chart` folder and add view `View.cshtml`
 
@@ -1236,7 +1236,7 @@ Create a new project folder called `Helpers` and add a file named `ExcelAPIHelpe
 
 A detailed explanation is provided for each of the important functions of this helper class. 
 
-![Screenshot of the new folder in Visual Studio](images/helper.JPG)
+![Screenshot of the new folder in Visual Studio](Images/helper.JPG)
 
 ##### `ExcelAPIHelper.cs` contents
 
@@ -1827,37 +1827,37 @@ namespace GraphExcel
 Once above updates are made, run the project (F5 or Press Run Project button). Preferably use private browser mode to experience the full application flow. 
 
 The application launches on your local host and shows the starter page. 
-![Screeshot of the application](images/app1.JPG)
+![Screeshot of the application](Images/app1.JPG)
 
 Proceed to sign-in and authorize the app. Once authorized, the application shows the greeting page with menu options. Click on the `ToDoList` link from the top menu bar.    
-![Screeshot of the application. User is signing in.](images/app2.JPG)
+![Screeshot of the application. User is signing in.](Images/app2.JPG)
 
 The app uploads `ToDoList.xlsx` and displays task listing page. Since there are no tasks added yet, you will see blank listing.  
-![Screeshot of the application](images/app3.JPG)
+![Screeshot of the application](Images/app3.JPG)
 
 Click on the `Add new` link to create a new task. Add few tasks with various stages of status. 
-![Screeshot of the application](images/app4.JPG)
+![Screeshot of the application](Images/app4.JPG)
 
 After adding each task, the app shows the updated task listing. If the newly added task is not updated, click the `Refresh` link after few moments. 
 
 A sample list tasks are shown below.  
-![Screeshot of the application](images/app5.JPG)
+![Screeshot of the application](Images/app5.JPG)
 
 Click on the `Charts' link to see the breakdown of tasks using a pie chart created and downloaded (as image) using the Excel API.
 
-![Screeshot of the application](images/app6a.JPG)
+![Screeshot of the application](Images/app6a.JPG)
 
-![Screeshot of the application](images/app6.JPG)
+![Screeshot of the application](Images/app6.JPG)
 
 #### View source Excel file
 
 As a last step, you can login to the OneDrive Business account and open the `ToDoList.xlsx` in the browser to see the updates made by the app. **Do not open the file using the Excel desktop application as it will result in edit conflict for future updates made using the app**. 
 
-![Screeshot of the ToDoList.xlsx file.](images/app7.JPG)
+![Screeshot of the ToDoList.xlsx file.](Images/app7.JPG)
 
-![Screeshot of the ToDoList.xlsx file.](images/app8.JPG)
+![Screeshot of the ToDoList.xlsx file.](Images/app8.JPG)
 
-![Screeshot of the ToDoList.xlsx file.](images/app10.JPG)
+![Screeshot of the ToDoList.xlsx file.](Images/app10.JPG)
 
 ## Overview of Excel API
 
