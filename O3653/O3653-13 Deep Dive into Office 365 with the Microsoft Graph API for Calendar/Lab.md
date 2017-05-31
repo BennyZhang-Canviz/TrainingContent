@@ -110,11 +110,7 @@ Congratulations... at this point your app is configured with Azure AD and levera
 39. Back on the Application Registration Portal page, click **Add Platform>Web**.
 40. Paste the value of **Project Url** into the **Redirect URIs** field.
 41. Scroll to the bottom of the page and click **Save**.
-42. Set Startup page to Signout page (to avoid stale token error)
-43. Right-click **QuickStartCalendarWebApp** and click **Properties** to open the project properties.
-44. Click **Web** in the left navigation.
-45. Under **Start Action** Choose **Specific Page** option and Type its value as **Account/SignOut**
-46. Press **F5** to compile and launch your new application in the default browser.
+42. Press **F5** to compile and launch your new application in the default browser.
 
 ## Exercise 2: Access Calendar through Microsoft Graph SDK
 
