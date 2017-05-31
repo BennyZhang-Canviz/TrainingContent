@@ -60,7 +60,9 @@ In this exercise, you will create the ASP.NET MVC5 application and register it w
 
 13. Copy the displayed app password and paste it into the value for **ida:AppSecret** in your project's **Web.config** file.
 
-14. Set the **ida:AppScopes** value to *Notes.ReadWrite*. 
+14. Set the **ida:AppScopes** value to *Notes.ReadWrite*.  
+
+    Note: Add the key **ida:AppId**, **ida:AppSecret** as following if they don't exist.
 
     ```
     <configuration>
