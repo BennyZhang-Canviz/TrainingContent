@@ -26,40 +26,41 @@ In this exercise, you will create the ASP.NET MVC5 application and register it w
  ![Screenshot of the previous step](Images/02.png)
 
 6. At this point you can test the authentication flow for your application.
-  1. In Visual Studio, press **F5**. The browser will automatically launch taking you to the HTTPS start page for the web application.
+
+  In Visual Studio, press **F5**. The browser will automatically launch taking you to the HTTPS start page for the web application.
 
 
-2.   To sign in, click the **Sign In** link in the upper-right corner.
+  To sign in, click the **Sign In** link in the upper-right corner.
 
-  3. Login using your **Organizational Account**.
+  Login using your **Organizational Account**.
 
-  4. Upon a successful login, since this will be the first time you have logged into this app, Azure AD will present you with the common consent dialog that looks similar to the following image.
+  Upon a successful login, since this will be the first time you have logged into this app, Azure AD will present you with the common consent dialog that looks similar to the following image:
 
-    ![06](Images/06.png)
+​	Click **Accept** to approve the app's permission request on your data in Office 365.
 
-  5. Click **Accept** to approve the app's permission request on your data in Office 365.
+![06](Images/06.png)
 
-  6. You will then be redirected back to your web application. However notice in the upper right corner, it now shows your email address & the **Sign Out** link.
+​	You will then be redirected back to your web application. However notice in the upper right corner, it now shows 	your email address & the **Sign Out** link.
 
-  7. In Visual Studio, press **Shift+F5** to stop debugging.
+​	In Visual Studio, press **Shift+F5** to stop debugging.
 
-​          Congratulations... at this point your app is configured with Azure AD and leverages OpenID Connect and OWIN to facilitate the authentication process!
+​        Congratulations... at this point your app is configured with Azure AD and leverages OpenID Connect and OWIN to facilitate the authentication process!
 
-8. Open the **Web.config** file in the root directory and find the **appSettings** element. This is where you will add the app ID and app secret that you will generate in the next step.
+7. Open the **Web.config** file in the root directory and find the **appSettings** element. This is where you will add the app ID and app secret that you will generate in the next step.
 
-9. Launch the Application Registration Portal by opening a browser to [apps.dev.microsoft.com](https://apps.dev.microsoft.com/) to register a new application.
+8. Launch the Application Registration Portal by opening a browser to [apps.dev.microsoft.com](https://apps.dev.microsoft.com/) to register a new application.
 
-10. Sign into the portal using your Office 365 username and password. The **Graph AAD Auth v2 Starter Project** template allows you to sign in with either a Microsoft account or an Office 365 for business account, but the "People" features work only with business and school accounts.
+9. Sign into the portal using your Office 365 username and password. The **Graph AAD Auth v2 Starter Project** template allows you to sign in with either a Microsoft account or an Office 365 for business account, but the "People" features work only with business and school accounts.
 
-11. Click **Add an app**, type **OneNoteGraphQuickStart** for the application name, and then click **Create application**.
+10. Click **Add an app**, type **OneNoteGraphQuickStart** for the application name, and then click **Create application**.
 
-12. Copy the **Application Id** and paste it into the value for **ida:AppId** in your project's **Web.config** file.
+11. Copy the **Application Id** and paste it into the value for **ida:AppId** in your project's **Web.config** file.
 
-13. Under **Application Secrets** click **Generate New Password** to create a new client secret for your app.
+12. Under **Application Secrets** click **Generate New Password** to create a new client secret for your app.
 
-14. Copy the displayed app password and paste it into the value for **ida:AppSecret** in your project's **Web.config** file.
+13. Copy the displayed app password and paste it into the value for **ida:AppSecret** in your project's **Web.config** file.
 
-15. Set the **ida:AppScopes** value to *Notes.ReadWrite*. 
+14. Set the **ida:AppScopes** value to *Notes.ReadWrite*. 
 
     ```
     <configuration>
@@ -75,25 +76,25 @@ In this exercise, you will create the ASP.NET MVC5 application and register it w
     </configuration>
     ```
 
-16. In Visual Studio, right-click **OneNoteDev** > **Properties** to open the project properties.
+15. In Visual Studio, right-click **OneNoteDev** > **Properties** to open the project properties.
 
-17. Click **Web** in the left navigation.
+16. Click **Web** in the left navigation.
 
-18. Copy the **Project Url** value.
+17. Copy the **Project Url** value.
 
-19. Back on the Application Registration Portal page, click **Add Platform** > **Web**.
+18. Back on the Application Registration Portal page, click **Add Platform** > **Web**.
 
-20. Paste the project URL into the **Redirect URIs** field.
+19. Paste the project URL into the **Redirect URIs** field.
 
-21. At the bottom of the page, click **Save**.
+20. At the bottom of the page, click **Save**.
 
-22. Press F5 to compile and launch your new application in the default browser.
+21. Press F5 to compile and launch your new application in the default browser.
 
-23. When the Graph and AAD v2 Auth Endpoint Starter page appears, sign in with your Office 365 account.
+22. When the Graph and AAD v2 Auth Endpoint Starter page appears, sign in with your Office 365 account.
 
-24. Review the permissions the application is requesting, and click **Accept**.
+23. Review the permissions the application is requesting, and click **Accept**.
 
-25. Now that you are signed into your application, exercise 1 is complete!
+24. Now that you are signed into your application, exercise 1 is complete!
 
 ## Exercise 2: Create the Notebook Repository Class
 
