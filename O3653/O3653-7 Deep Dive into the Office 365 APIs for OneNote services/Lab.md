@@ -33,11 +33,14 @@ In this exercise, you will create the ASP.NET MVC5 application and register it w
 
   3. Login using your **Organizational Account**.
 
-  4. Upon a successful login, since this will be the first time you have logged into this app, Azure AD will present you with the common consent dialog that looks similar to the following image:
+  4. Upon a successful login, since this will be the first time you have logged into this app, Azure AD will present you with the common consent dialog that looks similar to the following image.
 
     ![06](Images/06.png)
+
   5. Click **Accept** to approve the app's permission request on your data in Office 365.
+
   6. You will then be redirected back to your web application. However notice in the upper right corner, it now shows your email address & the **Sign Out** link.
+
   7. In Visual Studio, press **Shift+F5** to stop debugging.
 
 ​          Congratulations... at this point your app is configured with Azure AD and leverages OpenID Connect and OWIN to facilitate the authentication process!
