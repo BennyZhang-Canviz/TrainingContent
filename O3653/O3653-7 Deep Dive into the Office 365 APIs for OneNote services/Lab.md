@@ -772,18 +772,15 @@ In this step you will create the ASP.NET MVC controller and view for pages withi
 The last step is to test the application you just created!
 
 1. Press **F5** in Visual Studio to launch the application.
-
- > **Note:** If you receive an error that indicates ASP.NET could not connect to the SQL database, please see the [SQL Server Database Connection Error Resolution document](../../SQL-DB-Connection-Error-Resolution.md) to quickly resolve the issue. 
-
-1. When the browser loads, click the **Sign in** link in the upper right corner and login using your Office 365 credentials.
+2. When the browser loads, click the **Sign in** link in the upper right corner and login using your Office 365 credentials.
 
  After logging in you will be taken back to your ASP.NET MVC application. 
 
-2. Click the **Notebooks** link in the top navigation. You will see a list of notebooks that are currently in your OneDrive for Business store listed.
-3. Click one of the notebook's **View Sections** links. You will see a list of the sections within the selected notebook.
-4. Click one of the section's **View Pages** links. You will see a list of the pages within that section.
-5. Click one of the page's **View in OneNote Web Client** links to see a new browser window load the notebook's page within the browser.
-6. Go back to your application and click one of the page's **Delete** links. The page will be deleted and you will be taken back to the homepage of the application. If you navigate back to the list of pages within the section, you will see the page is no longer listed.
+3. Click the **Notebooks** link in the top navigation. You will see a list of notebooks that are currently in your OneDrive for Business store listed.
+4. Click one of the notebook's **View Sections** links. You will see a list of the sections within the selected notebook.
+5. Click one of the section's **View Pages** links. You will see a list of the pages within that section.
+6. Click one of the page's **View in OneNote Web Client** links to see a new browser window load the notebook's page within the browser.
+7. Go back to your application and click one of the page's **Delete** links. The page will be deleted and you will be taken back to the homepage of the application. If you navigate back to the list of pages within the section, you will see the page is no longer listed.
 
 Congratulations! You have created an ASP.NET MVC application that uses the Microsoft Graph to interact with OneNote Notebooks found within a user's OneDrive for Business store.
 
