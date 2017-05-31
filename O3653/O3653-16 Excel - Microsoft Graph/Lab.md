@@ -64,6 +64,8 @@ In this exercise, you will create the ASP.NET MVC5 application and register it w
 
 14. Set the **ida:AppScopes** value to *Notes.ReadWrite*. 
 
+    Note: Add the key **ida:AppId**, **ida:AppSecret** as following if they don't exist.
+
     ```
     <configuration>
       <appSettings>
@@ -90,19 +92,13 @@ In this exercise, you will create the ASP.NET MVC5 application and register it w
 
 20. At the bottom of the page, click **Save**.
 
-21. Set the Start action to the **Account/Signout** action (to avoid a stale token error).
+21. Press F5 to compile and launch your new application in the default browser.
 
-22. Return to the **Web** tab of the project properties page in Visual Studio.
+22. When the Graph and AAD v2 Auth Endpoint Starter page appears, sign in with your Office 365 account.
 
-23. Under **Start Action** choose **Specific Page** and enter *Account/SignOut*.
+23. Review the permissions the application is requesting, and click **Accept**.
 
-24. Press F5 to compile and launch your new application in the default browser.
-
-25. When the Graph and AAD v2 Auth Endpoint Starter page appears, sign in with your Office 365 account.
-
-26. Review the permissions the application is requesting, and click **Accept**.
-
-27. Now that you are signed into your application, exercise 1 is complete!
+24. Now that you are signed into your application, exercise 1 is complete!
 
 ## Exercise 2: Access the Excel file in OneDrive for Business through Microsoft Graph SDK
 1. This exercise is based on the project located in the  [\\O3653\O3653-16 Excel - Microsoft Graph\Starter Project](Starter Project) folder. Open the project with Visual Studio 2017. 
