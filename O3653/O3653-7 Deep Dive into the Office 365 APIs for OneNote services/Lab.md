@@ -35,7 +35,7 @@ In this exercise, you will create the ASP.NET MVC5 application and register it w
 
   4. Upon a successful login, since this will be the first time you have logged into this app, Azure AD will present you with the common consent dialog that looks similar to the following image:
 
-    ![06](Images\06.png)
+    ![06](Images/06.png)
   5. Click **Accept** to approve the app's permission request on your data in Office 365.
   6. You will then be redirected back to your web application. However notice in the upper right corner, it now shows your email address & the **Sign Out** link.
   7. In Visual Studio, press **Shift+F5** to stop debugging.
@@ -84,19 +84,13 @@ In this exercise, you will create the ASP.NET MVC5 application and register it w
 
 21. At the bottom of the page, click **Save**.
 
-22. Set the Start action to the **Account/Signout** action (to avoid a stale token error).
+22. Press F5 to compile and launch your new application in the default browser.
 
-23. Return to the **Web** tab of the project properties page in Visual Studio.
+23. When the Graph and AAD v2 Auth Endpoint Starter page appears, sign in with your Office 365 account.
 
-24. Under **Start Action** choose **Specific Page** and enter *Account/SignOut*.
+24. Review the permissions the application is requesting, and click **Accept**.
 
-25. Press F5 to compile and launch your new application in the default browser.
-
-26. When the Graph and AAD v2 Auth Endpoint Starter page appears, sign in with your Office 365 account.
-
-27. Review the permissions the application is requesting, and click **Accept**.
-
-28. Now that you are signed into your application, exercise 1 is complete!
+25. Now that you are signed into your application, exercise 1 is complete!
 
 ## Exercise 2: Create the Notebook Repository Class
 
