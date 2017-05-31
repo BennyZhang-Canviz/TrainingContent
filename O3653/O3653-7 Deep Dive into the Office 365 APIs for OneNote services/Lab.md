@@ -14,16 +14,19 @@ In this first step, you will create a new ASP.NET MVC project using the **Graph 
 In this exercise, you will create the ASP.NET MVC5 application and register it with Azure active Directory.
 
 1. Launch **Visual Studio 2017** as an administrator. 
+
 2. In Visual Studio select **File/New/Project**.
+
 3. In the **New Project** dialog, select **Templates/Visual C#/Web** and click **ASP.NET Web Application**. Name the new project **OneNoteDev** and then click **OK**.  
 
-    ![Screenshot of the previous step](Images/01.png)
-    > NOTE: Make sure you enter the exact same name for the Visual Studio Project that is specified in these lab instructions.  The Visual Studio Project name becomes part of the namespace in the code.  The code inside these instructions depends on the namespace matching the Visual Studio Project name specified in these instructions.  If you use a different project name the code will not compile unless you adjust all the namespaces to match the Visual Studio Project name you enter when you create the project.
+   ![01](Images/01.png)
+
+
 
 4. In the **New ASP.NET Project** dialog, click **MVC** and then click **Change Authentication**.
 5. Select **Work And School Accounts**, check **Read directory data** and click **OK**.
 
- ![Screenshot of the previous step](Images/02.png)
+ ![02](Images/02.png)
 
 6. At this point you can test the authentication flow for your application.
 
