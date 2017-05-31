@@ -112,16 +112,20 @@ In this exercise, you will create the ASP.NET MVC5 application and register it w
    <add key="ida:TenantId" value="" />
    <add key="ida:AppId" value="" />
    <add key="ida:AppSecret" value="" />
+   <add key="ida:PostLogoutRedirectUri" value="" />
    ```
 
-2. Upload the Excel workbook to OneDrive, we will access the Excel workbook in later exercises. 
+2. In Visual Studio, right-click **GraphExcel** > **Properties** to open the project properties. Click **Web** in the left navigation. Make sure **Project URL** is the same as Exercise 1.
+
+3. Upload the Excel workbook to OneDrive, we will access the Excel workbook in later exercises. 
+
    1. Open your SharePoint site and click the **OneDrive** button to go to the OneDrive site.
       ![](Images/10.png)
 
-   2. Locate the [\\\O3653\O3653-16 Excel - Microsoft Graph\Lab Files](Lab Files) folder provided with this lab and find the [`ToDoList.xlsx`](Lab Files/ToDoList.xlsx) file. Drag the [`ToDoList.xlsx`](Lab Files/ToDoList.xlsx) file to OneDrive's Root folder.
+   2. Locate the **\\O3653\O3653-16 Excel - Microsoft Graph\Lab Files** folder provided with this lab and find the **ToDoList.xlsx** file. Drag the **ToDoList.xlsx** file to OneDrive's Root folder.
       ![](Images/11.png)
 
-3. Update **_Layout** file to add **To Do List** link:
+4. Update **_Layout** file to add **To Do List** link:
    1. In Visual Studio, open the **_Layout.cshtml** file found in the **Views/Shared** folder.
       1. Locate the part of the file that includes a few links at the top of the page... it should look similar to the following code:
 
