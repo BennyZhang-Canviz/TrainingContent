@@ -16,26 +16,37 @@ In this exercise, you will create the ASP.NET MVC5 application and register it w
 1. Launch **Visual Studio 2017** as administrator.
 2. In Visual Studio, click **File/New/Project**.
 3. In the **New Project** dialog
-  1. Select **Templates/Visual C#/Web**.
-  2. Select **ASP.NET Web Application**.
 
-    ![Screenshot of the previous step](Images/01.png)
+  Select **Templates/Visual C#/Web**.
 
-  3. Give the project the name **QuickStartCalendarWebApp** and Click **OK**.
+  Select **ASP.NET Web Application**.
+
+  ![Screenshot of the previous step](Images/01.png)
+
+  Give the project the name **QuickStartCalendarWebApp** and Click **OK**.
 4. In the **New ASP.NET Project** dialog
-  1. Click **MVC**.
-  2. Click **Change Authentication**.
-  3. Select **Work And School Accounts**.
-  4. Select **Cloud - Single Organization**
-  5. Input **Domain** of your O365 tenancy
-  6. Check **Read directory data** under Directory Access Permissions
-  7. Click **OK**.
-  8. Uncheck **Host in the cloud**
-  9. Click **OK**.
 
-    ![Screenshot of the previous step](Images/03.png)
+  Click **MVC**.
 
-    ![Screenshot of the previous step](Images/02.png)
+  Click **Change Authentication**.
+
+  Select **Work And School Accounts**.
+
+  Select **Cloud - Single Organization**
+
+  Input **Domain** of your O365 tenancy
+
+  Check **Read directory data** under Directory Access Permissions
+
+  Click **OK**.
+
+  Uncheck **Host in the cloud**
+
+  Click **OK**.
+
+  ![Screenshot of the previous step](Images/03.png)
+
+  ![Screenshot of the previous step](Images/02.png)
 
 5. Ensure the web project uses SSL by default:
   1. In the **Solution Explorer** tool window, select the project and look at the **Properties** tool window. 
@@ -57,7 +68,7 @@ In this exercise, you will create the ASP.NET MVC5 application and register it w
   1. In Visual Studio, press **F5**. The browser will automatically launch taking you to the HTTPS start page for the web application.
 
 
-  1. To sign in, click the **Sign In** link in the upper-right corner.
+1.   To sign in, click the **Sign In** link in the upper-right corner.
   2. Login using your **Organizational Account**.
   3. Upon a successful login, since this will be the first time you have logged into this app, Azure AD will present you with the common consent dialog that looks similar to the following image:
 
