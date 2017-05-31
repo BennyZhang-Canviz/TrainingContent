@@ -113,20 +113,25 @@ In this step you will create a repository class that will handle all communicati
        <add key="ida:TenantId" value="" />
        <add key="ida:AppId" value="" />
        <add key="ida:AppSecret" value="" />
+       <add key="ida:PostLogoutRedirectUri" value="" />
 
-2. This exercise will heavily leverage the OneNote REST API. To simplify working with the REST services, we will use the popular [JSON.NET](http://www.newtonsoft.com/json) JSON framework for .NET.
+2. In Visual Studio, right-click **OneNoteDev** > **Properties** to open the project properties. Click **Web** in the left navigation. Make sure **Project URL** is the same as Exercise 1.
 
-3. Create a new folder in the project's **Models** folder named **JsonHelpers**.
+  ![09](Images/09.png)
 
-4. Copy all the C# files provided with this lab, located in the **O3653\O3653-7 Deep Dive into the Office 365 APIs for OneNote services\Labs\Labfiles** folder, into this new **JsonHelpers** folder you just added in your project.
+3. This exercise will heavily leverage the OneNote REST API. To simplify working with the REST services, we will use the popular [JSON.NET](http://www.newtonsoft.com/json) JSON framework for .NET.
+
+4. Create a new folder in the project's **Models** folder named **JsonHelpers**.
+
+5. Copy all the C# files provided with this lab, located in the **O3653\O3653-7 Deep Dive into the Office 365 APIs for OneNote services\Labs\Labfiles** folder, into this new **JsonHelpers** folder you just added in your project.
 
   > **Note:** These files were created using the handy utility in Visual Studio: [Paste JSON as Classes](http://blogs.msdn.com/b/webdev/archive/2012/12/18/paste-json-as-classes-in-asp-net-and-web-tools-2012-2-rc.aspx).
 
-5. Create model objects for the OneNote notebook, section & page:
+6. Create model objects for the OneNote notebook, section & page:
 
-6. Add a new class named **Notebook** to the **Models** folder in the project.
+7. Add a new class named **Notebook** to the **Models** folder in the project.
 
-7. Add the following code to the `Notebook` class:
+8. Add the following code to the `Notebook` class:
 
   ````c#
       public Notebook() {
@@ -146,9 +151,9 @@ In this step you will create a repository class that will handle all communicati
       public List<Section> Sections { get; set; }
   ````
 
-8. Add a new class named **Section** to the **Models** folder in the project.
+9. Add a new class named **Section** to the **Models** folder in the project.
 
-9. Add the following code to the `Section` class:
+10. Add the following code to the `Section` class:
 
   ````c#
       public Section() {
@@ -163,9 +168,9 @@ In this step you will create a repository class that will handle all communicati
       public List<NotePage> Pages { get; set; }
   ````
 
-10. Add a new class named **NotePage** to the **Models** folder in the project.
+11. Add a new class named **NotePage** to the **Models** folder in the project.
 
-11. Add the following code to the `NotePage` class:
+12. Add the following code to the `NotePage` class:
 
    ````c#
        public string Id { get; set; }
@@ -179,11 +184,11 @@ In this step you will create a repository class that will handle all communicati
        public string ClientUrl { get; set; }
    ````
 
-12. Create the repository class for communicating with the OneNote via Microsoft Graph:
+13. Create the repository class for communicating with the OneNote via Microsoft Graph:
 
-13. Add a new class to the **Models** folder named **NotebookRepository**.
+14. Add a new class to the **Models** folder named **NotebookRepository**.
 
-14. Ensure the following `using` statements are present at the top of the `NotebookRepository` class:
+15. Ensure the following `using` statements are present at the top of the `NotebookRepository` class:
 
    ````c#
    using System.Collections.Generic;
@@ -193,7 +198,7 @@ In this step you will create a repository class that will handle all communicati
    using Newtonsoft.Json;
    ````
 
-15. Add the following private fields and class constructor to the `NotebookRepository` class:
+16. Add the following private fields and class constructor to the `NotebookRepository` class:
 
    ````c#
            private HttpClient _client;
@@ -214,7 +219,7 @@ In this step you will create a repository class that will handle all communicati
            }
    ````
 
-16. Add a method to get a list of all OneNote notebooks for the currently logged in user's OneDrive for Business store. Add the following code to the `NotebookRepository` class:
+17. Add a method to get a list of all OneNote notebooks for the currently logged in user's OneDrive for Business store. Add the following code to the `NotebookRepository` class:
 
    ````c#
                public async Task<IEnumerable<Notebook>> GetNotebooks()
@@ -261,7 +266,7 @@ In this step you will create a repository class that will handle all communicati
            }
    ````
 
-17. Add the following code to get a single notebook based on the ID specified:
+18. Add the following code to get a single notebook based on the ID specified:
 
    ````c#
                public async Task<Notebook> GetNotebook(string notebookid)
@@ -297,7 +302,7 @@ In this step you will create a repository class that will handle all communicati
            }
    ````
 
-18. Add the following code to get all the sections in the specified notebook using the Microsoft Graph. This should go in the `NotebookRepository` class.
+19. Add the following code to get all the sections in the specified notebook using the Microsoft Graph. This should go in the `NotebookRepository` class.
 
    ````c#
                public async Task<Notebook> GetNotebookSections(string notebookid)
@@ -393,7 +398,7 @@ In this step you will create a repository class that will handle all communicati
            }
    ````
 
-19. And finally, add the following method to delete a specified page:
+20. And finally, add the following method to delete a specified page:
 
    ````c#
         public async Task DeletePage(string id)
