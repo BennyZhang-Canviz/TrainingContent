@@ -137,7 +137,7 @@ In this exercise you will take the ASP.NET MVC web application you created in th
 4. Open the **_Layout.cshtml** file found in the **Views/Shared** folder.
   1. Locate the part of the file that includes a few links at the top of the page... it should look similar to the following code:
 
-    ````asp
+    ````
     <div class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>@Html.ActionLink("Home", "Index", "Home")</li>
@@ -150,7 +150,7 @@ In this exercise you will take the ASP.NET MVC web application you created in th
 
   2. Update that navigation to have a new link (the **Outlook Calendar API** link added below) as well as a reference to the login control you just created:
 
-    ````asp
+    ````
     <div class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>@Html.ActionLink("Home", "Index", "Home")</li>
