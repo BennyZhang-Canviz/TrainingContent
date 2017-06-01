@@ -43,34 +43,30 @@ In this exercise, you will create the ASP.NET MVC5 application and register it w
 
 13. Click **OK**.
 
-14. Uncheck **Host in the cloud**
-
-15. Click **OK**.
-
    ![Screenshot of the previous step](Images/03.png)
 
    ![Screenshot of the previous step](Images/02.png)
 
-16. Ensure the web project uses SSL by default:
+14. Ensure the web project uses SSL by default:
 
-17. In the **Solution Explorer** tool window, select the project and look at the **Properties** tool window. 
+15. In the **Solution Explorer** tool window, select the project and look at the **Properties** tool window. 
 
-18. Ensure **SSL Enabled** is set to **TRUE**.
+16. Ensure **SSL Enabled** is set to **TRUE**.
 
-19. Copy the **SSL URL** property to the clipboard for use in the next step.
+17. Copy the **SSL URL** property to the clipboard for use in the next step.
 
    ![Screenshot of the previous step](Images/SslEnabled.png)
    > It is important to do this now because in the next step when you create the application in Azure AD, you want the reply URL to use HTTPS. If you did not do this now, you would have to manually make the changes the Visual Studio wizard is going to do for you in creating the app.
 
-20. At this point you can test the authentication flow for your application.
+18. At this point you can test the authentication flow for your application.
 
-21. In Visual Studio, press **F5**. The browser will automatically launch taking you to the HTTPS start page for the web application.
+19. In Visual Studio, press **F5**. The browser will automatically launch taking you to the HTTPS start page for the web application.
 
-22. To sign in, click the **Sign In** link in the upper-right corner.
+20. To sign in, click the **Sign In** link in the upper-right corner.
 
-23. Login using your **Organizational Account**.
+21. Login using your **Organizational Account**.
 
-24. Upon a successful login, since this will be the first time you have logged into this app, Azure AD will present you with the common consent dialog that looks similar to the following image:
+22. Upon a successful login, since this will be the first time you have logged into this app, Azure AD will present you with the common consent dialog that looks similar to the following image:
 
 
 ![Screenshot of the previous step](Images/ConsentDialog.png)
@@ -150,8 +146,6 @@ In this exercise you will take the ASP.NET MVC web application you created in th
   ```
 
   Update that navigation to have a new link (the **Outlook Calendar API** link added below) as well as a reference to the login control you just created:
-
-  ​
 
   ```
   <div class="navbar-collapse collapse">
