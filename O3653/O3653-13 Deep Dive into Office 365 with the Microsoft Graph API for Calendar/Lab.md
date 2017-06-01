@@ -135,31 +135,34 @@ In this exercise you will take the ASP.NET MVC web application you created in th
 3. Update **_Layout** file to add **Outlook Calendar API** link:
 
 4. Open the **_Layout.cshtml** file found in the **Views/Shared** folder.
-  1. Locate the part of the file that includes a few links at the top of the page... it should look similar to the following code:  
+  1. Locate the part of the file that includes a few links at the top of the page... it should look similar to the following code:
 
-
-      <div class="navbar-collapse collapse">
+    ````csharp
+    csharp<div class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>@Html.ActionLink("Home", "Index", "Home")</li>
         <li>@Html.ActionLink("About", "About", "Home")</li>
         <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
       </ul>
       @Html.Partial("_LoginPartial")
-        </div>
+    </div>
+    ````
 
   2. Update that navigation to have a new link (the **Outlook Calendar API** link added below) as well as a reference to the login control you just created:
 
-        <div class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
+    ````csharp
+    <div class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
         <li>@Html.ActionLink("Home", "Index", "Home")</li>
         <li>@Html.ActionLink("About", "About", "Home")</li>
         <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
         <li>@Html.ActionLink("Outlook Calendar API", "Index", "Calendar")</li>
-          </ul>
-          @Html.Partial("_LoginPartial")
-        </div>
-    ​
+      </ul>
+      @Html.Partial("_LoginPartial")
+    </div>
+    ````
 
+    ​
 
 ### Create the Calendar controller and use the Graph SDK
 
