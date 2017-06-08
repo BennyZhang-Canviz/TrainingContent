@@ -1,6 +1,6 @@
 # Connect to Microsoft Graph to manage groups and users
 
-In this lab, you will learn how to use the Microsoft Graph to build user centric applications and create an ASP.NET MVC application that uses the Microsoft Graph client SDK to create a basic group management experience. It will search for groups in your tenant's directory, show their members, and get member details such as their photo. In a bonus excercise, you will learn how to add more users to a group (through a people picker) and remove users from a group.
+In this lab, you will learn how to use the Microsoft Graph to build user centric applications and create an ASP.NET MVC application that uses the Microsoft Graph client SDK to create a basic group management experience. It will search for groups in your tenant's directory, show their members, and get member details such as their photo. In a bonus exercise, you will learn how to add more users to a group (through a people picker) and remove users from a group.
 
 ## Get an Office 365 developer environment
 To complete the exercises below, you will require an Office 365 developer environment. Use the Office 365 tenant that you have been provided with for Microsoft Ignite.
@@ -35,9 +35,9 @@ To complete the exercises below, you will require an Office 365 developer enviro
 
 14. Click **OK**.
 
-   ![Screenshot of the previous step](Images/03.png)
+   ![Screenshot of the previous step](images/03.png)
 
-   ![Screenshot of the previous step](Images/02.png)
+   ![Screenshot of the previous step](images/02.png)
 
    15. Ensure the web project uses SSL by default:
 
@@ -47,7 +47,7 @@ To complete the exercises below, you will require an Office 365 developer enviro
 
    18. Copy the **SSL URL** property to the clipboard for use in the next step.
 
-       ![Screenshot of the previous step](Images/SslEnabled.png)
+       ![Screenshot of the previous step](images/SslEnabled.png)
 
        > It is important to do this now because in the next step when you create the application in Azure AD, you want the reply URL to use HTTPS. If you did not do this now, you would have to manually make the changes the Visual Studio wizard is going to do for you in creating the app.
 
@@ -61,7 +61,7 @@ To complete the exercises below, you will require an Office 365 developer enviro
 
    23. Upon a successful login, since this will be the first time you have logged into this app, Azure AD will present you with the common consent dialog that looks similar to the following image:
 
-   ![Screenshot of the previous step](Images/ConsentDialog.png)
+   ![Screenshot of the previous step](images/ConsentDialog.png)
 
    24. Click **Accept** to approve the app's permission request on your data in Office 365.
 
@@ -147,7 +147,7 @@ To complete the exercises below, you will require an Office 365 developer enviro
     using GraphUsersGroups.Auth;
     ```
 
-7. In **GroupSearchController.cs**, insert code into the **GroupSearchController** class to intialize a **GraphServiceClient**, later used to make our calls to Microsoft Graph. The **GraphServiceClient** is initialized by obtaining an access token through the `GetUserAccessToken` helper function.
+7. In **GroupSearchController.cs**, insert code into the **GroupSearchController** class to initialize a **GraphServiceClient**, later used to make our calls to Microsoft Graph. The **GraphServiceClient** is initialized by obtaining an access token through the `GetUserAccessToken` helper function.
 
     ```c#
     public static string appId = ConfigurationManager.AppSettings["ida:AppId"];
@@ -221,42 +221,42 @@ To complete the exercises below, you will require an Office 365 developer enviro
     ```
 
 10. In the same file, add the following function that will make a query to Graph to get the members of the selected group. Initially this won't feature any paging, but will get the first 10 members. We'll add paging later.
-    ```csharp
-    [Authorize]
-    // GET group members and page through the results (10 at a time)
-    public async Task<ActionResult> GroupMembers(string groupId, string nextLink)
-    {
-        // Show the profile of a user after a user is clicked from the search.
-        var client = GetGraphServiceClient();
-        List<User> userMembers = new List<User>();
-        IGroupMembersCollectionWithReferencesPage members = new GroupMembersCollectionWithReferencesPage();
-        IGroupMembersCollectionWithReferencesRequest membersRequest = null;
+  ```csharp
+  [Authorize]
+  // GET group members and page through the results (10 at a time)
+  public async Task<ActionResult> GroupMembers(string groupId, string nextLink)
+  {
+      // Show the profile of a user after a user is clicked from the search.
+      var client = GetGraphServiceClient();
+      List<User> userMembers = new List<User>();
+      IGroupMembersCollectionWithReferencesPage members = new GroupMembersCollectionWithReferencesPage();
+      IGroupMembersCollectionWithReferencesRequest membersRequest = null;
 
-        try
-        {
+      try
+      {
 
-            if (groupId != null)
-            {
-                var group = await client.Groups[groupId].Request().Select("displayName,id").GetAsync();
-                ViewBag.groupId = groupId;
-                ViewBag.groupName = group.DisplayName;
-                membersRequest = client.Groups[groupId].Members.Request().Top(10);
-            }
-            members = await membersRequest.GetAsync();
+          if (groupId != null)
+          {
+              var group = await client.Groups[groupId].Request().Select("displayName,id").GetAsync();
+              ViewBag.groupId = groupId;
+              ViewBag.groupName = group.DisplayName;
+              membersRequest = client.Groups[groupId].Members.Request().Top(10);
+          }
+          members = await membersRequest.GetAsync();
 
-            foreach (DirectoryObject d in members.CurrentPage)
-            {
-                User u = d as User;
-                userMembers.Add(u);
-            }
-        }
-        catch (Exception)
-        {
-            // no users?
-        }
-        return View(userMembers);
-    }
-    ```
+          foreach (DirectoryObject d in members.CurrentPage)
+          {
+              User u = d as User;
+              userMembers.Add(u);
+          }
+      }
+      catch (Exception)
+      {
+          // no users?
+      }
+      return View(userMembers);
+  }
+  ```
 
 11. Replace the contents of **Views\GroupSearch\Index.cshtml** with the following code. This renders a search bar and a table to display the group results.
 
@@ -618,7 +618,7 @@ This step is entirely optional. Here we'll add code that will allow you to add n
         return RedirectToAction("GroupMembers", "GroupSearch", routeValues);
     }
     ```
-2.  We'll also add another function that will route a request to a people picker experience to pick a user to add to the group.
+2. We'll also add another function that will route a request to a people picker experience to pick a user to add to the group.
     ```csharp
     public async Task<ActionResult> FindUserForGroup(string groupId)
     {
