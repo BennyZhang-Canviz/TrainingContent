@@ -297,9 +297,9 @@ To complete the exercises below, you will require an Office 365 developer enviro
   ```
 
 10. Press F5 to compile and launch your new application in the default browser.
- 1. When the Graph and AAD v2 Auth Endpoint Starter page appears, sign in with your Office 365 account.
+11.  When the Graph and AAD v2 Auth Endpoint Starter page appears, sign in with your Office 365 account.
 
- 2. Review the permissions the application is requesting, and click **Accept**.
+12.  Review the permissions the application is requesting, and click **Accept**.
 
 Exercise 2 with web sign in is complete!
 
@@ -559,29 +559,31 @@ In this step you'll create a view for the app start page and a view that display
 
 4. Replace the contents with the following code.
 
+   ​
 
-    <h2>Microsoft Graph Webhooks</h2>
-    
-    <div>
-        <p>You can subscribe to webhooks for specific resources (such as Outlook messages or events) to get notifications about changes to the resource.</p>
-        <p>This sample creates a subscription for the <i>me/mailFolders('Inbox')/messages</i> resource and the <i>Created</i> change type. The request body looks like this:</p>
-        <code>
-            {<br />
-            &nbsp;&nbsp;"resource": "me/mailFolders('Inbox')/messages",<br />
-            &nbsp;&nbsp;"changeType": "created",<br />
-            &nbsp;&nbsp;"notificationUrl": "https://your-notification-endpoint",<br />
-            &nbsp;&nbsp;"clientState": "your-client-state",<br />
-            &nbsp;&nbsp;"expirationDateTime": "2016-03-14T03:13:29.4232606+00:00"<br />
-            }
-        </code>
-        <p>See the <a href="http://graph.microsoft.io/en-us/docs/api-reference/v1.0/api/subscription_post_subscriptions">docs</a> for other supported resources and change types.</p>
-        <br />
-        @using (Html.BeginForm("CreateSubscription", "Subscription"))
-        {
-            <button type="submit">Create subscription</button>
-        }
-    </div>
-#### Create the Subscription view
+       <h2>Microsoft Graph Webhooks</h2>
+       
+       <div>
+           <p>You can subscribe to webhooks for specific resources (such as Outlook messages or events) to get notifications about changes to the resource.</p>
+           <p>This sample creates a subscription for the <i>me/mailFolders('Inbox')/messages</i> resource and the <i>Created</i> change type. The request body looks like this:</p>
+           <code>
+               {<br />
+               &nbsp;&nbsp;"resource": "me/mailFolders('Inbox')/messages",<br />
+               &nbsp;&nbsp;"changeType": "created",<br />
+               &nbsp;&nbsp;"notificationUrl": "https://your-notification-endpoint",<br />
+               &nbsp;&nbsp;"clientState": "your-client-state",<br />
+               &nbsp;&nbsp;"expirationDateTime": "2016-03-14T03:13:29.4232606+00:00"<br />
+               }
+           </code>
+           <p>See the <a href="http://graph.microsoft.io/en-us/docs/api-reference/v1.0/api/subscription_post_subscriptions">docs</a> for other supported resources and change types.</p>
+           <br />
+           @using (Html.BeginForm("CreateSubscription", "Subscription"))
+           {
+               <button type="submit">Create subscription</button>
+           }
+       </div>
+   **Create the Subscription view**
+
 
 1. Right-click the **Views\Subscription** folder and choose **Add** > **View**. 
 
