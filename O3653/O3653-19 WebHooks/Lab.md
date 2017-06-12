@@ -943,41 +943,49 @@ In this step you'll create a view that displays some properties of the changed m
    </div>
    ```
 
-Exercise 5: Set up SignalR
+
+
+## Exercise 5: Set up SignalR
 
 This app uses SignalR to notify the client to refresh its view.
 
 1. Right-click the GraphWebhooks project and create a folder named SignalR.
+
 2. Right-click the SignalR folder and choose Add > SignalR Hub Class (v2).
+
 3. Name the class NotificationHub and click OK. This sample doesn't add any functionality to the hub.
+
 4. Right-click the SignalR folder and choose Add > SignalR Persistent Connection Class (v2).
+
 5. Name the class NotificationService.cs and click Add.
+
 6. Replace the contents with the following code.
 
-   ```
+   ​
 
-using System.Collections.Generic;
-using Microsoft.AspNet.SignalR;
-using Microsoft.Graph;
+        using System.Collections.Generic;
+       using Microsoft.AspNet.SignalR;
+       using Microsoft.Graph;
+       
+       namespace GraphWebhooks.SignalR
+       {
+           public class NotificationService : PersistentConnection
+           {
+               public void SendNotificationToClient(List<Message> messages)
+               {
+                   var hubContext = GlobalHost.ConnectionManager.GetHubContext<NotificationHub>();
+                   if (hubContext != null)
+                   {
+                       hubContext.Clients.All.showNotification(messages);
+                   }
+               }
+           }
+       }
+   ​
 
-namespace GraphWebhooks.SignalR
-{
-    public class NotificationService : PersistentConnection
-    {
-        public void SendNotificationToClient(List<Message> messages)
-        {
-            var hubContext = GlobalHost.ConnectionManager.GetHubContext<NotificationHub>();
-            if (hubContext != null)
-            {
-                hubContext.Clients.All.showNotification(messages);
-            }
-        }
-    }
-}
-   ```
-
-7. Open **Startup.cs** in the root directory of the project.
-8. Add the following line to the **Configuration** method.
+   7. Open **Startup.cs** in the root directory of the project.
+   8. Add the following line to the **Configuration** method.
+      ​
 
 ```c#
 app.MapSignalR();
