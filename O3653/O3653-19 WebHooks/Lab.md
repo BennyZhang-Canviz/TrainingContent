@@ -945,8 +945,6 @@ In this step you'll create a view that displays some properties of the changed m
 
 
 
-## Exercise 5: Set up SignalR
-
 This app uses SignalR to notify the client to refresh its view.
 
 1. Right-click the GraphWebhooks project and create a folder named SignalR.
