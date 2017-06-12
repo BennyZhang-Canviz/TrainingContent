@@ -983,8 +983,9 @@ This app uses SignalR to notify the client to refresh its view.
        }
    ​
 
-   7. Open **Startup.cs** in the root directory of the project.
-   8. Add the following line to the **Configuration** method.
+   Open **Startup.cs** in the root directory of the project.
+
+   Add the following line to the **Configuration** method.
 
    ​
 
